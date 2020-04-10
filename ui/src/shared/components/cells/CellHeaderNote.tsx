@@ -1,6 +1,5 @@
 // Libraries
 import React, {FunctionComponent, useRef, RefObject, useState} from 'react'
-import ReactMarkdown from 'react-markdown'
 import classnames from 'classnames'
 
 // Components

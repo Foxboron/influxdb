@@ -12,6 +12,8 @@ import {
   DapperScrollbars,
 } from '@influxdata/clockface'
 
+import {MarkdownRenderer} from 'src/shared/components/views/MarkdownRenderer'
+
 // Constants
 const MAX_POPOVER_WIDTH = 280
 const MAX_POPOVER_HEIGHT = 200
@@ -57,7 +59,7 @@ const CellHeaderNote: FunctionComponent<Props> = ({note}) => {
         contents={() => (
           <DapperScrollbars style={contentStyle} autoSize={true}>
             <div className="cell--note-contents markdown-format">
-              <ReactMarkdown source={note} />
+              <MarkdownRenderer text={note} />
             </div>
           </DapperScrollbars>
         )}

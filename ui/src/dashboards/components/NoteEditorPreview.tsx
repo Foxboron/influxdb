@@ -1,6 +1,5 @@
 import React, {SFC, MouseEvent} from 'react'
 
-
 import FancyScrollbar from 'src/shared/components/fancy_scrollbar/FancyScrollbar'
 
 import {MarkdownRenderer} from 'src/shared/components/views/MarkdownRenderer'
@@ -11,7 +10,8 @@ interface Props {
   onScroll: (e: MouseEvent) => void
 }
 
-const cloudImageRenderer = "We don't support images in markdown for security purposes"
+const cloudImageRenderer = (): any =>
+  "We don't support images in markdown for security purposes"
 
 const NoteEditorPreview: SFC<Props> = props => {
   return (
@@ -25,7 +25,10 @@ const NoteEditorPreview: SFC<Props> = props => {
           <MarkdownRenderer
             text={props.note}
             className="markdown-format"
-            cloudRenderers={{image: cloudImageRenderer, imageReference: cloudImageRenderer}}
+            cloudRenderers={{
+              image: cloudImageRenderer,
+              imageReference: cloudImageRenderer,
+            }}
           />
         </div>
       </FancyScrollbar>
